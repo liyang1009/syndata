@@ -25,4 +25,10 @@ typedef struct{
 
 } data_result;
 
+typedef struct clients{
 
+	redisContext * redis_client;
+	PGconn * pgsql_client;
+	FILE * log_fp;
+
+} clients;
