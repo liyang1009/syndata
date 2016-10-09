@@ -15,7 +15,7 @@ read chat data from redis data type is list */
 static  char * ip_port[]={"127.0.0.1","6379"};
 void destory(data_result * result);
 
-static void  getDataFromRedis(){
+static void  get_data_from_redis(){
 	clients network_clients;
 	init_redis_context(&network_clients.redis_client,ip_port);
 	redisContext * context=network_clients.redis_client;
@@ -202,6 +202,6 @@ int main(int argc,char *argv[]){
 
     	struct timeval timeout = { 1, 500000 }; // 1.5 seconds
    	context = redisConnectWithTimeout(hostname, port, timeout);*/
-	getDataFromRedis();
+	get_data_from_redis();
 	return 1;
 }
