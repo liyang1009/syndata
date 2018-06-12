@@ -5,7 +5,7 @@
 #define THREAD_COUNT 2;
 pthread_mutex_t mutexsum;
 static char sql[MAXSQlLEN];
-static void  writeDataToPgsql(data_result * record, PGconn * con);
+static void  write_data_to_pg(data_result * record, PGconn * con);
 void init_redis_context(redisContext ** context,char * ip_port[]);
 /*
 get data from redis the data format is json
@@ -151,7 +151,7 @@ void destory(data_result * result){
 /*write  data  to pgsql storage the data forever
  purpose: the user want to scan this chat record from server
 */
-static void  writeDataToPgsql(data_result * record, PGconn * con){
+static void  write_data_to_pg(data_result * record, PGconn * con){
 	
 	PGresult   *res;
 	int j;
